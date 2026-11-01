@@ -30,9 +30,8 @@ paper's raw-output scoring, and should be disabled for raw predictions.
 entry point. It requires a compatible GPU environment with PyTorch, Transformers,
 PEFT and bitsandbytes, and user-supplied base-model, adapter and labeled JSONL
 paths. Run `python experiments/inference/infer_measured.py --help` for arguments.
-Set batch size and output cap to the experiment being reproduced. This code-only
-repository does not contain model weights, datasets or saved predictions and does
-not by itself reproduce the paper's numerical results.
+Set batch size and output cap to the experiment being reproduced. The repository includes packet captures but does not contain model weights,
+reference labels or saved predictions; it does not by itself reproduce the paper's numerical results.
 
 `training/qlora_example.yaml` records the main supervised fine-tuning settings
 with local path placeholders for use with a compatible LLaMA-Factory installation.
@@ -49,7 +48,9 @@ identical model weights. Model, dataset and dependency terms apply separately.
 - `experiments/inference/`: optional measured inference entry point.
 - `examples/`: synthetic checker demonstration.
 - `training/`: example QLoRA settings with local placeholders.
+- `data/pcaps/`: original packet captures and source attribution.
 
-The repository contains no experimental traffic, reference labels, saved model
-predictions, model weights, frozen server metadata or fuzzing implementation.
+The repository contains no reference labels, saved model predictions, model
+weights, frozen server metadata or fuzzing implementation. See
+[`data/pcaps/README.md`](data/pcaps/README.md) for capture provenance and scope.
 No project distribution license has been selected.
